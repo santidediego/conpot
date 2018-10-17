@@ -221,7 +221,7 @@ def main():
                   ' running Conpot')
             sys.exit(3)
         try:
-            if not os.path.join(args.config):
+            if not os.path.isfile(os.path.join(args.config)):
                 raise FileNotFoundError('Config file not found!')
                 logger.info('Config file found!')
             config.read(args.config)
